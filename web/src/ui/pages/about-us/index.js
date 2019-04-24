@@ -45,8 +45,9 @@ class AboutUs extends Component {
           <div>{creator.email}</div> </div>
         <div styleName="right-side-menu">
           Main Stuff
-        <ol>this.renderList()</ol>)
-          </div>
+        <ol>this.renderList()</ol>
+          <div>hi</div>
+        </div>
       </div>
 
 
