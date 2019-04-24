@@ -1,4 +1,4 @@
-// import omit from 'lodash/omit'
+import omit from 'lodash/omit'
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import CSSModules from "react-css-modules";
@@ -10,9 +10,9 @@ import Footer from "../components/footer";
 import Landing from "./landing";
 import Home from "./homepage/";
 import Login from "./login/";
+import SignOut from "./sign-out";
 import AboutUs from "./about-us";
 
-//  /about-us
 class App extends Component {
   render() {
     return (
@@ -26,6 +26,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />,
             <Route exact path="/landing" component={Landing} />
             <Route exact path="/about-us" component={AboutUs} />
+            <Route exact path="/sign-out" component={SignOut} />
           </Switch>
         </div>
         <div styleName="footer-container">

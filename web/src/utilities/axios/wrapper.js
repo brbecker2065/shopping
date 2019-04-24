@@ -8,7 +8,7 @@ export function getHeaders() {
     'Content-Type': 'application/vnd.api+json'
   }
 
-  const token = authToken.get()
+  const token = authToken.get();
   if (token) {
     headers['Authorization'] = `Bearer ${token}`
   }

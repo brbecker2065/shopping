@@ -6,7 +6,7 @@ height: 100%;
 
 }
 
-.right-side-menu {
+.right-main {
   flex-direction: column;
   
   flex-grow: 3;
