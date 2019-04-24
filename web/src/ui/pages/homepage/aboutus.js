@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
-
-import autoLogin from "../../../process/users/auth/auto-login";
+import { Link } from 'react-router-dom'
+//import autoLogin from "../../../process/users/auth/auto-login";
 import css from "./index.css";
 import * as axiosWrapper from "../../../utilities/axios/wrapper";
 
@@ -26,13 +26,17 @@ class Homepage extends Component {
 
   render() {
     const { messageOfTheDay } = this.state;
-
     return (
       <div styleName="homepage-container">
-        <div styleName="daily-message">{messageOfTheDay}</div>
-      </div>
+      <ol>
+        <li></li>
+      </ol>
+      //<Link to="/about-us">About us</Link>
+      
+      //<div styleName="daily-message">{messageOfTheDay}</div>
+      //</div>
     );
   }
 }
 
-export default autoLogin(CSSModules(Homepage, css));
+export default (CSSModules(Homepage, css));

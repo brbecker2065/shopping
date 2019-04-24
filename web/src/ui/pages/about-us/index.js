@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import css from "./index.css"
 import * as axiosWrapper from "../../../utilities/axios/wrapper";
-import { Column, Row } from "simple-flexbox";
-export default CSSModules(AboutUs, CSS)
+//import Spotlight from "./spotlight";
 
-class AboutUs extends Component {
+
+class AboutUsPage extends Component {
+
+
   constructor(props) {
     super(props);
     this.state = {
-      creatorsList: []
+      creators: [],
+      creator: {},
+      updatedCreator: {}
     };
   }
   componentDidMount() {
@@ -17,7 +21,7 @@ class AboutUs extends Component {
       .get("/creators")
       .then(response => {
         this.setState({
-          creatorsList: response.data.creators
+          creators: response.data.creators
         });
         console.log("about us response", response.data.creators);
       })
@@ -25,32 +29,38 @@ class AboutUs extends Component {
         console.log("Error fetching daily message", err);
       });
   }
-  fetchCreatorDetails = (event) => {
+  /*fetchCreatorDetails = (event) => {
     event.preventDefault();
     axiosWrapper.get("/creators/${userhandle}").then((response) => {
       console.log("spotlight response", response)
-      this.setState({ creators: response.data.creator })
-    }).catch((r) => {
-      console.log()
+      this.setState({ creator: response.data.creator })
+        .catch((r) => {
+          console.log()
+
+        })
     })
-  }
+
+
+  }*/
+
   render() {
     console.log(this.state);
-
     return (
       <div styleName="container">
-        <div styleName="left-side-menu">
-          <ol>this.renderList()</ol>
-          <div>{creator.firstName}</div>
-          <div>{creator.email}</div> </div>
-        <div styleName="right-side-menu">
-          Main Stuff
-        <ol>this.renderList()</ol>
-          <div></div>
-        </div>
+        <aside styleName="left-side-menu"></aside>
+        <ol>
+          {this.state.creators.map((creator, index) => {
+            return <li> key={index}{creator.firstName}</li>;
+          })}
+          <div>{this.state.creators.email}</div>
+        </ol>
+        <main styleName="right-side-menu">
+          Main Stuff</main>
+        <ol></ol>
       </div>
-
 
     )
   }
 }
+
+export default CSSModules(AboutUsPage, css)
