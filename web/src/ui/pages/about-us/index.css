@@ -1,0 +1,18 @@
+.container {
+  background-color: yellow;
+  display: flex;
+  width: 100%;
+}
+
+.right-side-menu {
+  flex-direction: column;
+  float: right;
+  background-color: red;
+  width: 50%;
+  
+}
+.left-side-menu {
+  float: left;
+  background-color: blueviolet;
+  width: 50%;
+}
