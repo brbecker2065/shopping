@@ -46,7 +46,7 @@ class AboutUs extends Component {
         <div styleName="right-side-menu">
           Main Stuff
         <ol>this.renderList()</ol>
-          <div>hi</div>
+          <div></div>
         </div>
       </div>
 
