@@ -1,4 +1,5 @@
-.container {
+.landingContainer {
   color: red;
   background-color: aquamarine;
+display:flex;
 }

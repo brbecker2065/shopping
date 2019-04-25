@@ -15,7 +15,7 @@
   .input {
     margin-bottom: 20px;
   }
-  :global {
+   :global {
     .ui.big.input {
       margin-bottom: 25px;
     }

@@ -1,7 +1,11 @@
 .homepage-container {
   color: black;
+background-color: aquamarine;
+display: flex;
+height: 100%;
+ 
 }
 
 .daily-message {
-  color: blur;
+  color: blue
 }
