@@ -7,6 +7,7 @@ import { protectedRoute } from "../../../process/users/auth";
 class LandingPage extends Component {
   render() {
     return <div className="landingContainer">this is our landing page</div>;
+    console.log(items)
   }
 
   componentDidMount() {

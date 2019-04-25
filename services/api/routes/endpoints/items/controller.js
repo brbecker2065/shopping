@@ -9,6 +9,8 @@ export default class AuthController {
     async createNewItems(req, res) {
         const { item } = req.body
         res.send({ message: "I will call this later" });
+        console.log(hi)
+
     }
 
 
