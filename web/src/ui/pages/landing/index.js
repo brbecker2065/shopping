@@ -5,9 +5,9 @@ import css from "./index.css";
 import { protectedRoute } from "../../../process/users/auth";
 
 class LandingPage extends Component {
-  render() {
-    return <div className="landingContainer">this is our landing page</div>;
-    console.log(items)
+
+  state = {
+    items: []
   }
 
   componentDidMount() {
@@ -15,11 +15,39 @@ class LandingPage extends Component {
       .get("/items")
       .then(response => {
         console.log("about us response", response);
-        this.setState({ items: response.data.items });
+        this.setState({ items: response.data });
       })
       .catch(err => {
-        console.log("Error fetching items");
+        this.setState({ error: false })
+        console.log("Error fetching items")
+
       })
   }
+
+
+
+  //   if(this.state.error) <div>oh no, I am on fire</div>
+  // if items == " "
+
+  // else if (
+  // }
+  render() {
+    console.log(this.state)
+    return this.state.items.map((item, i) => {
+
+
+      <div className="landingContainer">this is our landing page</div>;
+
+
+
+    })
+    // return <div key={i}>{item.itemid}</div>
+
+    //   return   <div className="landingContainer">this is our landing page</div>;
+  }
 }
+
+
+
+
 export default protectedRoute(CSSModules(LandingPage, css));

@@ -33,17 +33,19 @@ app.use(cookieParser());
 router.setup(app);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error("Not Found");
   err.status = 404;
   return next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // if (req.app.get('env') === 'development') {
-  return res.status(err.status).send(err.message);
-  // return res.sendStatus(err.status || 500)
+  res.locals.message = err.msg
+  res.locals.error = err
+  res.Status(err.status)
+  return res.send(err)
 });
 
 app.listen(process.env.port, () => {

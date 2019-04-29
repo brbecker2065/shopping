@@ -1,4 +1,4 @@
-export class ErrorWithStatus extends Error {
+/*export class ErrorWithStatus extends Error {
   status
   level
   constructor(msg, status, level = 50, innerError) {
@@ -13,9 +13,17 @@ export class ErrorWithStatus extends Error {
   }
 }
 
-export class NotFoundError extends ErrorWithStatus {
+/*export class NotFoundError extends ErrorWithStatus {
   constructor(message = 'Not found', level) {
     console.log("Message in construct", message)
     super(message, 404, level)
+  }
+}*/
+export class ErrorWithStatus extends Error {
+  status
+  constructor({ msg, status }) {
+    super(msg)
+    this.status = status
+    Error.captureStackTrace(this, this.constructor)
   }
 }
