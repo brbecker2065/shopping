@@ -1,4 +1,5 @@
-create table if not exists daily_messages
+create table
+if not exists daily_messages
 (
     id integer primary key not null,
     daily_message text

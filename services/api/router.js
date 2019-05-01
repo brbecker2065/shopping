@@ -1,8 +1,7 @@
 import fs from "fs";
 import path from "path";
 import express from "express";
-import expressJwt from "express-jwt";
-
+import expressJwt from "express-jwt"
 const API_PATH = "./routes/endpoints";
 
 const jwtConfig = {

@@ -12,6 +12,7 @@ class LandingPage extends Component {
 
   componentDidMount() {
     axiosWrapper
+
       .get("/items")
       .then(response => {
         console.log("about us response", response);
@@ -41,9 +42,8 @@ class LandingPage extends Component {
 
 
     })
-    // return <div key={i}>{item.itemid}</div>
+    // return <div key={i}>{item.itemid}</div> 
 
-    //   return   <div className="landingContainer">this is our landing page</div>;
   }
 }
 
