@@ -2,7 +2,8 @@
 import { wrapAsyncFunc } from "../../../utils/wrap-async-route";
 import { randomFill } from "crypto";
 import { createItem, fetchItems } from "../../commands/items";
-export default class AuthController {
+
+export default class ItemsController {
     constructor(router) {
         router.post("/:id", wrapAsyncFunc(this.createNewItems));
         router.get("/", wrapAsyncFunc(this.getAllItems));
