@@ -4,6 +4,7 @@ import * as axiosWrapper from "../../../utilities/axios/wrapper";
 import css from "./index.css";
 import { protectedRoute } from "../../../process/users/auth";
 
+
 class LandingPage extends Component {
 
   state = {

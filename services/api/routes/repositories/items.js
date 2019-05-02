@@ -11,4 +11,5 @@ const itemDTOMAPPER = row => ({
 export async function fetchUserByEmail() {
     const query = sql`select * from ITEMS;`;
     return (await PGWrapper.sqlAndMap(query, itemDTOMAPPER));
+
 }

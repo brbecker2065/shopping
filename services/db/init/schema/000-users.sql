@@ -6,8 +6,7 @@ if not exists pg_stat_statements;
 create table
 if not exists users
 (
-    user_handle uuid primary key default gen_random_uuid
-(),
+    user_handle uuid primary key default gen_random_uuid(),
     username text not null,
     first_name text not null,
   	middle_name text,

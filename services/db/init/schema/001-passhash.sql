@@ -9,4 +9,3 @@ if not exists passhash
 );
 grant select, insert, update, delete on table passhash to project_app;
 grant select on table passhash to project_read;
-s

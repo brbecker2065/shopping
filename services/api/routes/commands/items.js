@@ -9,7 +9,7 @@ export async function fetchItems() {
             const results = await fetchItemsFromDB()
             return results
         } catch (err) {
-            throw new StatusErro({ msg: 'DB error, status: 500' })
+            throw new ErrorWithStatus({ msg: 'DB error, status: 500' })
         }
 
     } else {

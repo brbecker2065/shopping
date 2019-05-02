@@ -1,5 +1,5 @@
-insert into items(item_handle, name, price) values
-('7487860752', 'Basketball', '14.95'),
-('3958931744', 'dell xps 13', '1595.95'),
-('8902342501', 'basketball', '9.95')
+insert into items(item_handle, item, price) values
+('88ac31c3-7eb4-4fc5-a249-3de519563e47', 'Basketball', '14.95'),
+('e66fc803-4622-41a8-9b53-fe2da9cc6223', 'dell xps 13', '1595.95'),
+('79c2583f-1d69-4f5e-ab93-03583e4fda38', 'basketball', '9.95')
 on conflict do nothing;

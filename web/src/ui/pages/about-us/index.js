@@ -30,7 +30,7 @@ class AboutUsPage extends Component {
     axiosWrapper
       .get(`/creators/${userhandle}`)
       .then(response => {
-        console.log("spotligh response", response);
+        console.log("spotlight response", response);
         this.setState({
           creator: response.data.creator,
           updatedCreator: response.data.creator
