@@ -3,13 +3,13 @@ import PGWrapper from "../../utils/pg-wrapper";
 
 const itemDTOMAPPER = row => ({
     ItemHandle: row.item_handle,
-    name: row.name,
+    item: row.item,
     price: row.price
 
 });
 
-export async function fetchUserByEmail() {
-    const query = sql`select * from ITEMS;`;
+export async function fetchItemsFromDB() {
+    const query = sql`select * from items;`;
     return (await PGWrapper.sqlAndMap(query, itemDTOMAPPER));
 
 }

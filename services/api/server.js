@@ -44,7 +44,7 @@ app.use(function (err, req, res, next) {
   // if (req.app.get('env') === 'development') {
   res.locals.message = err.msg
   res.locals.error = err
-  res.Status(err.status)
+  res.status(err.status)
   return res.send(err)
 });
 

@@ -9,6 +9,7 @@ export default class ItemsController {
         router.get("/", wrapAsyncFunc(this.getAllItems));
 
     } async getAllItems(req, res) {
+        console.log('hit getAllItems')
         const items = await fetchItems();
         res.send({ items })
     }

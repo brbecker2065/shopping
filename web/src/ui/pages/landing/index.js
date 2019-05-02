@@ -13,36 +13,29 @@ class LandingPage extends Component {
 
   componentDidMount() {
     axiosWrapper
-
       .get("/items")
       .then(response => {
         console.log("about us response", response);
-        this.setState({ items: response.data });
+        this.setState({ items: response.data.items });
       })
       .catch(err => {
-        this.setState({ error: false })
+        this.setState({ error: err })
         console.log("Error fetching items")
 
       })
   }
+  renderItems = () => {
+    return this.state.items.map((stuff, i) => {
 
-
-
-  //   if(this.state.error) <div>oh no, I am on fire</div>
-  // if items == " "
-
-  // else if (
-  // }
-  render() {
-    console.log(this.state)
-    return this.state.items.map((item, i) => {
-
-
-      <div className="landingContainer">this is our landing page</div>;
-
-
-
+      return <div className="landingContainer" key={i}>{stuff.item}</div>;
     })
+  }
+  render() {
+    return (<div>
+      {this.renderItems()}
+
+    </div>
+    )
     // return <div key={i}>{item.itemid}</div> 
 
   }
