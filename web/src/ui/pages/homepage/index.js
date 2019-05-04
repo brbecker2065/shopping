@@ -28,7 +28,7 @@ class Homepage extends Component {
     const { messageOfTheDay } = this.state;
 
     return (
-      <div styleName="homepage-container">
+      <div styleName="homepage-container">homepage
         <Link to="/about-us">About Us</Link>
         <div styleName="daily-message">{messageOfTheDay}</div>
       </div>

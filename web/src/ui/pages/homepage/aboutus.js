@@ -29,7 +29,7 @@ class Homepage extends Component {
     return (
       <div styleName="homepage-container">
       <ol>
-        <li></li>
+        <li>my page</li>
       </ol>
       //<Link to="/about-us">About us</Link>
       
