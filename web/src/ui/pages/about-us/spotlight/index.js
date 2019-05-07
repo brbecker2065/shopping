@@ -9,7 +9,7 @@ class Spotlight extends Component {
         if (creator && creator.firstName) {
             return (
                 <div>
-                    <div>{creator.firstName}</div>
+                    <div>spotlight{creator.firstName}</div>
                     <div>{creator.email}</div>
                     <form
                         onSubmit={event =>

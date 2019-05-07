@@ -12,6 +12,7 @@ import Home from "./homepage/";
 import Login from "./login/";
 import SignOut from "./sign-out";
 import AboutUs from "./about-us";
+import ItemDetail from "./itemDetail";
 
 class App extends Component {
   render() {
@@ -27,6 +28,8 @@ class App extends Component {
             <Route exact path="/landing" component={Landing} />
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/sign-out" component={SignOut} />
+            <Route exact path="/itemDetail" component={ItemDetail} />
+
           </Switch>
         </div>
         <div styleName="footer-container">

@@ -3,7 +3,7 @@ import CSSModules from "react-css-modules";
 import * as axiosWrapper from "../../../utilities/axios/wrapper";
 import css from "./index.css";
 import { protectedRoute } from "../../../process/users/auth";
-
+import { Link } from 'react-router-dom'
 
 class LandingPage extends Component {
 
@@ -26,18 +26,16 @@ class LandingPage extends Component {
   }
   renderItems = () => {
     return this.state.items.map((stuff, i) => {
-
       return <div className="landingContainer" key={i}>{stuff.item}</div>;
     })
   }
   render() {
     return (<div>landing
       {this.renderItems()}
-
+      <Link to="/itemDetail">itemdetails</Link>
     </div>
     )
     // return <div key={i}>{item.itemid}</div> 
-
   }
 }
 
