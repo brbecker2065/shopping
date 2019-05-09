@@ -3,6 +3,8 @@ import { fetchItemsFromDB } from "../repositories/items"
 
 
 let loggedIn = true;
+
+
 export async function fetchItems() {
 
     if (loggedIn) {

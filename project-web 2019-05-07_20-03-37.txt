@@ -1,0 +1,48 @@
+q2019-05-07T17:44:22.248679120Z 
+> web@0.1.0 start /src/app
+> node scripts/start.js
+2019-05-07T17:44:22.248762840Z 
+Starting the development server...
+2019-05-07T17:44:24.643761414Z 
+Node#moveAfter was deprecated. Use Node#after.
+Compiled successfully!
+2019-05-07T17:44:39.340579594Z 
+You can now view web in the browser.
+2019-05-07T17:44:39.340796642Z 
+  Local:            http://localhost:3000/
+  On Your Network:  http://172.19.0.3:3000/
+2019-05-07T17:44:39.341336857Z 
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+2019-05-07T17:44:39.341827646Z 
+Compiling...
+Failed to compile.
+2019-05-07T17:58:09.481108078Z 
+./src/ui/pages/itemDetail/index.js
+Syntax error: Unexpected token (15:8)
+2019-05-07T17:58:09.481119525Z 
+  13 |     render() {
+  14 |         const { itemDetails }
+> 15 |         console.log("here", this.props);
+     |         ^
+  16 |         return <div>Here is some item {this.props.match.params.id}</div>
+  17 |         // <div>item details</div>
+  18 |     }
+Compiling...
+Failed to compile.
+2019-05-07T17:59:07.898689720Z 
+./src/ui/pages/itemDetail/index.js
+Syntax error: Unexpected token (15:8)
+2019-05-07T17:59:07.898700896Z 
+  13 |     render() {
+  14 |         const { itemDetails }
+> 15 |         console.log("here", this.props);
+     |         ^
+  16 |         return <div>Here is some item {this.props.match.params.id}</div>
+  17 |         // <div>item details</div>
+  18 |     }
+Compiling...
+Compiled successfully!
+Compiling...
+Compiled successfully!
+

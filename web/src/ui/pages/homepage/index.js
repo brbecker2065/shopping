@@ -9,7 +9,7 @@ class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messageOfTheDay: ""
+      messageOfTheDay: "dailyMessage"
     };
   }
   componentDidMount() {
@@ -30,6 +30,8 @@ class Homepage extends Component {
     return (
       <div styleName="homepage-container">homepage
         <Link to="/about-us">About Us</Link>
+        <Link to="/itemDetail">item detail</Link>
+        <Link to="/spotlight">spotlight</Link>
         <div styleName="daily-message">{messageOfTheDay}</div>
       </div>
     );

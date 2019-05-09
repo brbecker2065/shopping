@@ -13,6 +13,7 @@ import Login from "./login/";
 import SignOut from "./sign-out";
 import AboutUs from "./about-us";
 import ItemDetail from "./itemDetail";
+//import SpotLight from "./Spotlight";
 
 class App extends Component {
   render() {
