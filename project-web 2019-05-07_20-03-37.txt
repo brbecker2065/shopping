@@ -22,7 +22,7 @@ Failed to compile.
 Syntax error: Unexpected token (15:8)
 2019-05-07T17:58:09.481119525Z 
   13 |     render() {
-  14 |         const { itemDetails }
+  14 |         const { itemDetail }
 > 15 |         console.log("here", this.props);
      |         ^
   16 |         return <div>Here is some item {this.props.match.params.id}</div>
@@ -35,7 +35,7 @@ Failed to compile.
 Syntax error: Unexpected token (15:8)
 2019-05-07T17:59:07.898700896Z 
   13 |     render() {
-  14 |         const { itemDetails }
+  14 |         const { itemDetail }
 > 15 |         console.log("here", this.props);
      |         ^
   16 |         return <div>Here is some item {this.props.match.params.id}</div>

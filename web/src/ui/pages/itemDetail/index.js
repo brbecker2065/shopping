@@ -7,18 +7,19 @@ import * as axiosWrapper from "../../../utilities/axios/wrapper";
 
 //`/items/4893`
 
+
 class itemDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      itemDetails: {}
+      itemDetail: {}
     }
   }
   componentDidMount() {
     axiosWrapper.get(`/items/${this.props.match.params.id}`)
       .then(response => {
         console.log("response from item detail", response);
-        this.setState({ itemDetails: respose.data.items });
+        this.setState({ itemDetail: respose.data.items });
       })
       .catch(err => {
         console.log("something bad happened", err)
@@ -26,11 +27,11 @@ class itemDetails extends Component {
       })
   }
   render() {
-    const { itemDetails } = this.state
+    const { itemDetail } = this.state
     console.log("here", this.props);
-    if (!itemDetails.name)
+    if (!itemDetail.name)
       return <div>loading</div>
-    return <div>Here is some item {itemDetails.name}</div>
+    return <div>Here is some item {itemDetail.name}</div>
     //{this.props.match.params.id}
     // <div>itemdetails</div>
   }
