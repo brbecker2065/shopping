@@ -35,6 +35,8 @@ class Homepage extends Component {
       
       //<div styleName="daily-message">{messageOfTheDay}</div>
       //</div>
+    //<div styleName="main-right">hello</div>
+    
     );
   }
 } 
