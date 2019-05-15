@@ -6,31 +6,39 @@ import { protectedRoute } from "../../../process/users/auth";
 import { Link } from 'react-router-dom'
 
 class LandingPage extends Component {
-
-  state = {
-    items: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: []
+    };
   }
-
   componentDidMount() {
     axiosWrapper
       .get("/items")
       .then(response => {
-        console.log("about us response", response);
+        console.log("what did we get from the backend", response);
         this.setState({ items: response.data.items });
       })
       .catch(err => {
         this.setState({ error: err })
-        console.log("Error fetching items")
+        console.log("Error fetching items", err)
 
-      })
+      });
   }
   render() {
 
-    return this.state.items.map((item_handle, i) => {
-      return <div> key={i}{items.item}</div>
-    })
+    // const { items } = this.state;
+    return (
+      <div>
+        {this.state.items.map((item, index) => (
 
+          <div key={index}>landingPage
+          <Link to={`itemDetail/${item.item_handle}`}>{item.name}</Link>
+          </div>
 
+        ))}
+      </div>
+    )
   }
 }
 

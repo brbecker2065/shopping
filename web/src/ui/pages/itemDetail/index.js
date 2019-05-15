@@ -18,7 +18,7 @@ class itemDetails extends Component {
     axiosWrapper.get(`/items/${this.props.match.params.id}`)
       .then(response => {
         console.log("response from item detail", response);
-        this.setState({ itemDetails: respose.data.item });
+        this.setState({ itemDetails: respose.data.items });
       })
       .catch(err => {
         console.log("something bad happened", err)
@@ -28,11 +28,11 @@ class itemDetails extends Component {
   render() {
     const { itemDetails } = this.state
     console.log("here", this.props);
-    if (!itemDetails.item)
+    if (!itemDetails.name)
       return <div>loading</div>
-    return <div>Here is some item {itemDetails.item}</div>
+    return <div>Here is some item {itemDetails.name}</div>
     //{this.props.match.params.id}
     // <div>itemdetails</div>
   }
 }
-export default protectedRoute(CSSModules(landing, css));
+export default protectedRoute(CSSModules(itemDetails, css));

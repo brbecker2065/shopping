@@ -1,5 +1,5 @@
 import { StatusError } from "../../utils/errors"
-import { fetchItemsFromDB } from "../repositories/items"
+import { fetchItemsFromDB, fetchItemDetailsFrommDB } from "../repositories/items"
 
 
 let loggedIn = true;
@@ -20,14 +20,18 @@ export async function fetchItems() {
         }
 
     } else {
-        throw new StatusError({ msg: "Please login", status: 423 });
+        throw new StatusError({ msg: "User not logged in", status: 400 });
     }
 
 }
-
-export async function createItem(item) {
-    console.log("New item I am trying to create", item);
-    if (!item) {
-        throw new ErrorWithStatus({ msg: "Please Provide an item", status: 400 })
-    }
+export async function fetchItemDetails(id) {
+    //do bussiness logic
+    const item = await fetchItemDetailsFrommDB(id);
+    return item;
 }
+//export async function createItem(item) {
+  //  console.log("New item I am trying to create", item);
+    //if (!item) {
+      //  throw new ErrorWithStatus({ msg: "Please Provide an item", status: 400 })
+   // }
+//}
