@@ -8,7 +8,7 @@ const itemDTOMapper = row => ({
 });
 const itemDetailsDTOMapper = row => ({
   itemHandle: row.item_handle,
-  item_name: row.name,
+  name: row.name,
   price: row.price,
   description: row.description
 

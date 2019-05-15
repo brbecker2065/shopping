@@ -33,7 +33,7 @@ class LandingPage extends Component {
         {this.state.items.map((item, index) => (
 
           <div key={index}>landingPage
-          <Link to={`itemDetail/${item.itemHandle}`}>{item.name}</Link>
+          <Link to={`item/${item.itemHandle}`}>{item.name}</Link>
           </div>
 
         ))}

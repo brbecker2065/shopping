@@ -29,8 +29,8 @@ class App extends Component {
             <Route exact path="/landing" component={Landing} />
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/sign-out" component={SignOut} />
-            <Route exact path="/itemDetail" component={ItemDetails} />
-
+            <Route exact path="/item/:id" component={ItemDetails} />
+            <Route component={() => (<div>No Page Found!!</div>)} />
           </Switch>
         </div>
         <div styleName="footer-container">
