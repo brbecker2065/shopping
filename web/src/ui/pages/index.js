@@ -13,7 +13,7 @@ import Login from "./login/";
 import SignOut from "./sign-out";
 import AboutUs from "./about-us";
 import ItemDetails from "./itemDetail";
-//import SpotLight from "./Spotlight";
+import Seller from "./sellerpage";
 
 class App extends Component {
   render() {
@@ -30,6 +30,7 @@ class App extends Component {
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/sign-out" component={SignOut} />
             <Route exact path="/item/:id" component={ItemDetails} />
+            <Route exact path="/sellerpage" component={Seller} />
             <Route component={() => (<div>No Page Found!!</div>)} />
           </Switch>
         </div>

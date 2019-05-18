@@ -16,7 +16,7 @@ class LandingPage extends Component {
     axiosWrapper
       .get("/items")
       .then(response => {
-        console.log("what did we get from the backend", response);
+        console.log("what did we get from the -------backend", response);
         this.setState({ items: response.data.items });
       })
       .catch(err => {
