@@ -31,7 +31,7 @@ class Homepage extends Component {
       <div styleName="homepage-container">homepage
         <Link to="/about-us">About Us</Link>
         <Link to="/itemDetail">item detail</Link>
-        <Link to="/spotlight">spotlight</Link>
+        <Link to="/sellerpage">seller</Link>
         <div styleName="daily-message">{messageOfTheDay}</div>
       </div>
     );
