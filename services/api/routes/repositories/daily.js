@@ -10,7 +10,7 @@ const userDTO = row => ({
   lastName: row.last_name,
   suffix: row.suffix,
   email: row.email,
-  joined: row.joined_date  
+  joined: row.joined_date
 })
 
 const userListDTO = row => ({
@@ -42,7 +42,7 @@ export async function fetchCreatorInfo(userHandle) {
 export async function fetchCreatorsDetails() {
   const query = sql`select user_handle, first_name, last_name from users where user_handle in (select * from creators);`;
 
-  const creators = await PGWrapper.sqlAndMap(query, userDTO);
+  const creators = await PGWrapper.sqlAndMap(query, userDTOlist);
 
   return creators;
 }

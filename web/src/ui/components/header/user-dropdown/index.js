@@ -6,11 +6,11 @@ import connected from "../../../../state/connect";
 import { selector as user } from "../../../../process/users/reducer";
 
 const options = [
-  { key: "seller", as: Link, to: "/seller", text: "Account", icon: "user" },
+  { key: "accountpage", as: Link, to: "/accountpage", text: "Account", icon: "user" },
   {
     key: "settings",
     as: Link,
-    to: "/sellerpage/settings",
+    to: "/settings",
     text: "Settings",
     icon: "settings"
   },

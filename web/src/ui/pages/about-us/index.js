@@ -9,7 +9,7 @@ class AboutUsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      creators: [],
+      site_creators: [],
       creator: {},
       updatedCreator: {}
     };
@@ -20,6 +20,7 @@ class AboutUsPage extends Component {
       .then(response => {
         console.log("about us response", response);
         this.setState({ creators: response.data.creators });
+        console.log(creators)
       })
       .catch(err => {
         console.log("Error fetching daily message");
@@ -51,10 +52,10 @@ class AboutUsPage extends Component {
     });
   };
 
-  submitCreatorUpdate = (event, userhandle) => {
+  submitCreatorUpdate = (event, userHandle) => {
     event.preventDefault();
     axiosWrapper
-      .put(`/creators/${userhandle}`, { creator: this.state.updatedCreator })
+      .put(`/creators/${userHandle}`, { creator: this.state.updatedCreator })
       .then(response => {
         console.log("updated creator response", response);
         const { creator } = response.data;
@@ -70,14 +71,14 @@ class AboutUsPage extends Component {
       <div styleName="container">
         <aside styleName="left-side-menu">
           <ol>
-            {this.state.creators.map((creator, index) => {
+            {this.state.site_creators.map((creator, index) => {
               return (
                 <li
                   key={index}
                   onClick={event =>
                     this.fetchCreatorDetails(event, creator.userHandle)
                   }
-                >
+                >console.log(creator.firstName)
                   {creator.firstName}
                 </li>
               );

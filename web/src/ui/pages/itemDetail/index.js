@@ -32,7 +32,7 @@ class ItemDetails extends Component {
     if (!itemDetail.name)
       return <div>loading</div>
     return <ol styleName="itemDetailContainer">Here is some item <li>{itemDetail.name}</li>
-      {itemDetail.price}</ol>
+      <li>{itemDetail.price}</li>{itemDetail.description}</ol>
   }
 }
 export default protectedRoute(CSSModules(ItemDetails, css));

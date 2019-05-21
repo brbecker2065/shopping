@@ -6,10 +6,11 @@ import css from "./index.css";
 class Seller extends Component {
     render() {
         const { creator, updatedCreator } = this.props;
+
+
+        <div>sellerpage</div>
     }
 }
-<div>sellerpage</div>
-
 
 
 

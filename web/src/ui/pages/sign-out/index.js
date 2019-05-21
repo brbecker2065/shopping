@@ -11,6 +11,11 @@ class SignOut extends React.Component {
   render() {
     return null;
   }
+
 }
 <div>SignOut</div>;
+
+
+
+
 export default connected([], [rootUserActions])(SignOut);
