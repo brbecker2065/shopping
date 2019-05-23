@@ -13,7 +13,10 @@
   width: 85px;
 }
 .active-links {
-  > span {
+
+}
+
+   span {
     margin-right: 15px;
     color: black;
   }
@@ -33,4 +36,4 @@
       box-shadow: 0 0 0 2px rgba(43, 196, 123, 0.6) inset;
     }
   }
-}
+
