@@ -3,7 +3,7 @@ import CSSModules from "react-css-modules";
 import { protectedRoute } from "../../../process/users/auth";
 import css from "./index.css";
 import * as axiosWrapper from "../../../utilities/axios/wrapper";
-import InputQuantity from "./custom-comp"
+//import InputQuantity from "./custom-comp"
 
 //`/items/4893`
 
