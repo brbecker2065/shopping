@@ -1,0 +1,34 @@
+   /* const { creator, updatedCreator } = this.props;
+
+        
+       if (creator && creator.firstName) {
+            return (
+                < div className="sellercontainer" > seller page
+                    < div className='left' > spotlight{creator.firstName}</div >
+                    <div className='right'>{creator.email}</div>
+                    <form
+                        onSubmit={event =>
+                            this.props.submitCreatorUpdate(event, creator.userHandle)
+                        }
+                    >
+                        <input
+                            type="text"
+                            value={updatedCreator.firstName}
+                            placeholder="First Name"
+                            onChange={this.props.updateCreator}
+                        />
+                        <button
+                            type="submit"
+                            onClick={event =>
+                                this.props.submitCreatorUpdate(event, creator.userHandle)
+                            }
+                        >
+                            Update Info
+                </button>
+                    </form>
+                </div >
+            )
+        }
+        return null;
+    }
+}*/

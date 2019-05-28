@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import { protectedRoute } from "../../../process/users/auth";
 import css from "./index.css";
-import * as axiosWrapper from "../../../utilities/axios/wrapper";
 //import InputQuantity from "./custom-comp"
-
+import * as axiosWrapper from "../../../utilities/axios/wrapper";
 //`/items/4893`
 
 
@@ -26,16 +25,49 @@ class ItemDetails extends Component {
 
       })
   }
-  render() {
-    const { itemDetail } = this.state
+  // render() {
 
-    if (!itemDetail.name)
+
+  //   this.handleChange = this.handleChange.bind(this);
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  // }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert('A quantity was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    const { itemDetail } = this.state;
+
+
+    if (!itemDetail.name) {
       return <div>loading</div>
-    return <ol styleName="itemDetailContainer">Here is some item <li>{itemDetail.name}</li>
-      <li>{itemDetail.price}</li>{itemDetail.description}</ol>
+    }
+    else {
+      return (
+        <div>
+          <div styleName="itemDetailContainer">
+            Here is some item
+            <div>{itemDetail.name}</div>
+            <div>{itemDetail.price}</div>
+            {itemDetail.description}
+          </div>
+          <label styleName="itemDetailLeft">Qty:
+            <input type="number" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+          <form onSubmit={this.handleSubmit}></form>
+        </div >
+
+      )
+
+    }
   }
 }
-
-
 
 export default protectedRoute(CSSModules(ItemDetails, css));

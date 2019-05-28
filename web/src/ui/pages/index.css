@@ -15,10 +15,11 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  background-color: rgb(233, 232, 232);
+  background-color: rgb(116, 124, 119);
   padding: 20px 50px;
 }
 
 .footer-container {
   flex: 0 1 40px;
+background-color:  yellowgreen
 }

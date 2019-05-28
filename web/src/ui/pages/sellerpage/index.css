@@ -1,4 +1,12 @@
 .sellercontainer {
-background-color: beige
+background-color: rgb(121, 121, 8)
+
 }
-        
+ .right{
+     background-color: aqua;
+    
+    }
+ 
+ .left{
+     background-color: blue;    
+ }
