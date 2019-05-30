@@ -11,58 +11,62 @@ class ItemDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      itemDetail: {}
-    }
+      itemDetails: {},
+      amount: 1
+    };
   }
   componentDidMount() {
     axiosWrapper.get(`/items/${this.props.match.params.id}`)
       .then(response => {
         console.log("response from item detail--------", response);
-        this.setState({ itemDetail: response.data.item });
+        this.setState({ itemDetails: response.data.item });
       })
       .catch(err => {
-        console.log("something bad happened------", err)
+        console.log("something bad happened------", err);
 
-      })
+      });
   }
-  // render() {
+  addItemToCart = event => {
+    this.props.updateCart(
+      event,
+      this.state.ItemDetails.handle,
+      this.state.amount
+    );
+  };
 
-
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert('A quantity was submitted: ' + this.state.value);
+  updateAmount = event => {
     event.preventDefault();
-  }
+    this.setState({ amount: event.target.value });
+  };
 
   render() {
-    const { itemDetail } = this.state;
+    const { itemDetails } = this.state;
 
 
-    if (!itemDetail.name) {
+    if (!itemDetails.name) {
       return <div>loading</div>
     }
     else {
       return (
-        <div>
-          <div styleName="itemDetailContainer">
-            Here is some item
-            <div>{itemDetail.name}</div>
-            <div>{itemDetail.price}</div>
-            {itemDetail.description}
-          </div>
-          <label styleName="itemDetailLeft">Qty:
-            <input type="number" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-          <form onSubmit={this.handleSubmit}></form>
-        </div >
+
+        <div styleName="itemDetailContainer">
+          Here is some item
+            <div>{itemDetails.name}</div>
+          <div>{itemDetails.price}</div>
+          {itemDetails.description}
+          <input type="number" value={this.state.amount}
+            onChange={this.updateAmount} />
+          <button onClick={this.props.updateCart}>add to cart</button>
+
+
+        </div>
+
+
+
+
+
+
+
 
       )
 
@@ -71,3 +75,5 @@ class ItemDetails extends Component {
 }
 
 export default protectedRoute(CSSModules(ItemDetails, css));
+
+

@@ -16,11 +16,24 @@ import ItemDetails from "./itemDetail";
 import Seller from "./sellerpage"
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      numItemsInCart: 0
+    };
+  }
+
+
+  updateCart = () => {
+    this.setState({ numItemsInCart: this.state.numItemsInCart + 1 });
+  };
+
+
   render() {
     return (
       <div styleName="App">
         <div styleName="header-container">
-          <Header />
+          <Header numItemsInCart={this.state.numItemsInCart} />
         </div>
         <div styleName="content-container">
           <Switch>
@@ -29,9 +42,14 @@ class App extends Component {
             <Route exact path="/landing" component={Landing} />
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/sign-out" component={SignOut} />
-            <Route exact path="/item/:id" component={ItemDetails} />
+            <Route exact path="/item/:id" render={({ match }) => (
+              <ItemDetails match={match} updateCart={this.updateCart} />
+            )}
+            />
             <Route exact path="/sellerpage" component={Seller} />
             <Route component={() => (<div>No Page Found!!</div>)} />
+
+
           </Switch>
         </div>
         <div styleName="footer-container">

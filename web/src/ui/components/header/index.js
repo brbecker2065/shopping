@@ -11,11 +11,15 @@ import DefaultLinks from "./nav-links";
 class Header extends Component {
   render() {
     const { active } = this.props.user;
-    const rightSide = active ? <UserLinks /> : <DefaultLinks />;
-
+    const rightSide = active ? (
+      <UserLinks numItemsInCart={this.props.numItemsInCart + 1} />
+    ) : (
+        <DefaultLinks />
+      );
+    const logoLink = active ? "/landing" : "/";
     return (
       <div styleName="container">
-        <Link to="/">
+        <Link to={logoLink}>
           <div styleName="logo">Logo</div>
         </Link>
         <div styleName="active-links">{rightSide}</div>

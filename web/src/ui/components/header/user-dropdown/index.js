@@ -34,15 +34,18 @@ class HeaderNavLinks extends Component {
       </span>
     );
 
-    return [
+    return (
+      <div>
+        <div>cart: {this.props.numItemsInCart}</div>,
       <Dropdown
-        key="user-dropdown"
-        trigger={trigger}
-        options={options}
-        pointing="top right"
-        icon={null}
-      />
-    ];
+          key="user-dropdown"
+          trigger={trigger}
+          options={options}
+          pointing="top right"
+          icon={null}
+        />
+      </div>
+    );
   }
 }
 
