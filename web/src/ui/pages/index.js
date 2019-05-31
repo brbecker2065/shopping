@@ -2,7 +2,7 @@ import omit from 'lodash/omit'
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import CSSModules from "react-css-modules";
-
+import * as axiosWrapper from "../../../utilities/axios/wrapper";
 import css from "./index.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -20,6 +20,13 @@ class App extends Component {
     super(props)
     this.state = {
       numItemsInCart: 0
+
+
+      //componentDidMount({
+      //   axioswrapper .get(this.cart.quantity)
+      //})then Response()=>
+
+
     };
   }
 
