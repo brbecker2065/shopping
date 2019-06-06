@@ -23,6 +23,7 @@ class Header extends Component {
           <div styleName="logo">Logo</div>
         </Link>
         <div styleName="active-links">{rightSide}</div>
+
       </div>
     );
   }

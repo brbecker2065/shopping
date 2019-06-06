@@ -2,7 +2,7 @@ import omit from 'lodash/omit'
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import CSSModules from "react-css-modules";
-import * as axiosWrapper from "../../../utilities/axios/wrapper";
+import * as axiosWrapper from "../../utilities/axios/wrapper";
 import css from "./index.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -20,25 +20,31 @@ class App extends Component {
     super(props)
     this.state = {
       numItemsInCart: 0
-
-
-      //componentDidMount({
-      //   axioswrapper .get(this.cart.quantity)
-      //})then Response()=>
-
-
     };
   }
 
+  componentDidMount() {
+    //   axioswrapper .get(this.cart.quantity)
+    //})then Response()=>
+  }
 
-  updateCart = () => {
-    this.setState({ numItemsInCart: this.state.numItemsInCart + 1 });
+  updateCart = (itemid, quantity) => {
+
+    axiosWrapper.post('/carts/add', { items: [{ id: itemid, quantity }] })
+      .then(res => {
+        console.log(res)
+        this.setState({ numItemsInCart: this.state.numItemsInCart + 1 })
+      })
+
+      .catch(err => {
+        console.log(err)
+      });
   };
 
 
   render() {
     return (
-      <div styleName="App">
+      <div styleName="App" >
         <div styleName="header-container">
           <Header numItemsInCart={this.state.numItemsInCart} />
         </div>
@@ -53,6 +59,8 @@ class App extends Component {
               <ItemDetails match={match} updateCart={this.updateCart} />
             )}
             />
+            <Route exact path="/cart"
+              render={() => <div>inside our cart</div>} />
             <Route exact path="/sellerpage" component={Seller} />
             <Route component={() => (<div>No Page Found!!</div>)} />
 
