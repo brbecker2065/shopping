@@ -36,8 +36,8 @@ class HeaderNavLinks extends Component {
 
     return (
       <div>
-        <div>cart: {this.props.numItemsInCart}</div>,
-      <Dropdown
+        <Link to="/cart">cart: {this.props.numItemsInCart}</Link>
+        <Dropdown
           key="user-dropdown"
           trigger={trigger}
           options={options}

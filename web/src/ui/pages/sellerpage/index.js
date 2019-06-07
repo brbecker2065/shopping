@@ -14,7 +14,7 @@ class Seller extends Component {
     }
 
     handleChange(event) {
-        this.setStat({ value: event.target.value });
+        this.setState({ value: event.target.value });
     }
 
     handleSubmit(event) {
@@ -23,16 +23,15 @@ class Seller extends Component {
     }
 
     render() {
-
-
-
-
         return (
-
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Qty:
-                                <input type="number" value={this.state.value} onChange={this.handleChange} />
+                    <input
+                        type="number"
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                    />
                 </label>
                 <input type="submit" value="Submit" />
             </form>

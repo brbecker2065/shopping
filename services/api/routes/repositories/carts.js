@@ -1,6 +1,5 @@
 import sql from "sql-template-strings";
 import PGWrapper from "../../utils/pg-wrapper";
-import { setupMaster } from "cluster";
 
 const cartDTO = row => ({
     itemid: row.item_id
