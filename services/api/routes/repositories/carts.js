@@ -29,3 +29,21 @@ export async function addItemsToCartForUserInDB(userHandle, items) {
     const results = await PGWrapper.sqlAndMap(query, cartDTO);
     return results(0);
 }
+
+
+/*export async function placeUserOrderInDb(userHandle) {
+    let placeOrder = sql`
+    with new_order as (
+    insert into orders (buyer_handle) values (${userHandle}) returning *
+    )
+    insert into order_items (
+    select new_order.order_id as order_id, c.item_id, c.quantity
+    from cart c
+    left join new_order on new_order.buyer_handle = c.user_handle
+    where c.user_handle = ${userHandle} and c.active = true
+    );
+    `;
+    let updateCart = sql`update cart set active = false where user_handle = ${userHandle} and active = true;`;
+    await PGWrapper.sqlTransaction(placeOrder, updateCart);
+    return;
+   }*/

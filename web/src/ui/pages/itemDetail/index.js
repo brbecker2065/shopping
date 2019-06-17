@@ -61,17 +61,16 @@ class ItemDetails extends Component {
 
         </div>
 
-
-
-
-
-
-
-
       )
 
     }
   }
+
+
+
+
+
+
 }
 
 export default protectedRoute(CSSModules(ItemDetails, css));

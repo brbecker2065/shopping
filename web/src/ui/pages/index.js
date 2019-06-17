@@ -23,10 +23,10 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    //   axioswrapper .get(this.cart.quantity)
-    //})then Response()=>
-  }
+  //componentDidMount() {
+  //axiosWrapper.get(this.cart.quantity)
+
+  //}
 
   updateCart = (itemid, quantity) => {
 
@@ -54,7 +54,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />,
             <Route exact path="/landing" component={Landing} />
             <Route exact path="/about-us" component={AboutUs} />
-            <Route exact path="/sign-out" component={SignOut} />
+            <Route exact path="/sign-out" />
             <Route exact path="/item/:id" render={({ match }) => (
               <ItemDetails match={match} updateCart={this.updateCart} />
             )}
